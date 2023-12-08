@@ -10,17 +10,20 @@ const NavBar = () => {
   <Box p='4' bg='red.400'>
   MyEcomerce
   </Box>
-  <Spacer />
+ 
 
   <Menu>
+  <Spacer />
   <MenuButton>
     Categoria
   </MenuButton>
+  <Spacer />
   <MenuList>
     <MenuItem>Categoria 1</MenuItem>
     <MenuItem>Categoria 2</MenuItem>
     
   </MenuList>
+  
 </Menu>
 
 
