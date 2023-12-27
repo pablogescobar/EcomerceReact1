@@ -23,11 +23,12 @@ const App = () => {
         <Route exact path="/items/:id" element={<ItemDetailContainer/>}/>
         <Route exact path="/categoria/:categoriaId" element={<ItemListContainer/>}/>
         <Route exact path="/producto/:id" element={<ItemDetailContainer/>}/>
-        <Route exact path="/about" element={<About/>}/>
+        <Route exact path="/about " element={<About/>}/>
         <Route exact path="/contact" element={<ContactUs/>}/>
         <Route exact path="/cart" element={<CartWidget/>}/>
         <Route exact path="/categoria/:categoria" element={<ProductCategory/>}/>
-        {/* <Route exact path="/categoria1/:Phones" element={<Phones/>}/>
+        {/* <Route exact path="/categoria1/:zapatilla" element={<Zapatilla
+        />}/>
         <Route exact path="/categoria1/:Cases" element={<Cases/>}/>
         <Route exact path="/categoria1/:Charger" element={<Charger/>}/> */}
       </Routes>
