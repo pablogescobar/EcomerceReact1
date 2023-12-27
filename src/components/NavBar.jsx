@@ -1,44 +1,47 @@
 import React from 'react'
+import { Flex, Spacer, Box, Menu, MenuButton, MenuList, MenuItem} from '@chakra-ui/react'
 import CartWidget from './CartWidget'
-import { Flex, Spacer, Box,Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   return (
+    <>
     <div>
-
-<Flex>
-  <Box p='4' bg='red.400'>
-  MyEcomerce
-  </Box>
- 
-
-  <Menu>
-  <Spacer />
-  <MenuButton>
-    Categoria
-  </MenuButton>
-  <Spacer />
-  <MenuList>
-    <MenuItem>Categoria 1</MenuItem>
-    <MenuItem>Categoria 2</MenuItem>
-    
-  </MenuList>
-  
-</Menu>
-
-
-
-
-
-
-  <Box p='4' bg='green.400'>
-  <CartWidget/>
-  </Box>
-</Flex>
-
-        
-        
+        <Flex align='center' bg='#FF108A'>
+          <div>
+            <Link to={"/"}>
+            <Box p='4' >
+            Inicio
+            </Box>
+            
+            </Link>
+          </div>
+            <Spacer />
+            <Menu>
+                <MenuButton>
+                Categorías
+                </MenuButton>
+                <MenuList>
+                    <Link to={"/categoria/Adidas"}>
+                    <MenuItem>Categoría A</MenuItem>
+                    </Link>
+                    <Link to={"/categoria/Gola"}>
+                    <MenuItem>Categoría B</MenuItem>
+                    </Link>
+                    <Link to={"/categoria/Dc"}>
+                    <MenuItem>Categoría C</MenuItem>
+                    </Link>
+                </MenuList>
+            </Menu>
+            <Spacer />
+            <Box p='4' >
+            <Link to={"/cart"}>
+            <CartWidget/>
+            </Link>           
+            </Box>
+        </Flex>
     </div>
+    </>
   )
 }
 

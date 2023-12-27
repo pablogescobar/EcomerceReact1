@@ -1,19 +1,45 @@
-import React from 'react'
-import NavBar from './components/NavBar'
-import { Button, ButtonGroup } from '@chakra-ui/react'
-import ItenListContainer from './components/ItenListContainer'
+import NavBar from "./components/NavBar";
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import Home from "./components/Home";
+import About from "./components/About";
+import ContactUs from "./components/ContactUs";
+import CartWidget from "./components/CartWidget";
+import ProductCategory from "./components/ProductCategory";
 
 const App = () => {
-  
   return (
-    <div>
-      <NavBar />
-      <Button>Agregar</Button>
-      <ItenListContainer greeting={"Bienvenidos a mi Ecomerce"} />
-       
-    </div>      
-   
-  )
-}
- export default App
+    <BrowserRouter>
 
+      <NavBar />
+      
+      
+      <Routes>
+
+        //rutas
+        <Route exact path="/" element={<ItemListContainer/>}/>
+        <Route exact path="/category/:id" element={<ItemListContainer/>}/>
+        <Route exact path="/items/:id" element={<ItemDetailContainer/>}/>
+        <Route exact path="/categoria/:categoriaId" element={<ItemListContainer/>}/>
+        <Route exact path="/producto/:id" element={<ItemDetailContainer/>}/>
+        <Route exact path="/about" element={<About/>}/>
+        <Route exact path="/contact" element={<ContactUs/>}/>
+        <Route exact path="/cart" element={<CartWidget/>}/>
+        <Route exact path="/categoria/:categoria" element={<ProductCategory/>}/>
+        {/* <Route exact path="/categoria1/:Phones" element={<Phones/>}/>
+        <Route exact path="/categoria1/:Cases" element={<Cases/>}/>
+        <Route exact path="/categoria1/:Charger" element={<Charger/>}/> */}
+      </Routes>
+      
+      
+      
+    </BrowserRouter>
+
+
+
+
+  );
+};
+
+export default App;
